@@ -1,7 +1,8 @@
 # Setup of PyPI proxy server
 # TODO: add real parameters
 # TODO: split off nginx setup into its own class
-define devpi::server ($uid='') {
+# TODO: optional uid parameter?!
+define devpi::server () { ##$uid='908') {
     $username   = 'devpi'
     $homedir    = "/var/lib/${username}"
     $dataroot   = "$homedir"
@@ -28,7 +29,7 @@ define devpi::server ($uid='') {
     user { $username:
         ensure      => 'present',
         comment     => 'PyPI Proxy Server',
-        uid         => $uid,
+        #uid         => $uid,
         gid         => $username,
         shell       => '/bin/bash',
         home        => $homedir,
