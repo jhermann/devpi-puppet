@@ -2,7 +2,7 @@
 # TODO: add real parameters
 # TODO: split off nginx setup into its own class
 # TODO: optional uid parameter?!
-define devpi::server () { ##$uid='908') {
+define devpi::server ( $uid='') {
     $username   = 'devpi'
     $homedir    = "/var/lib/${username}"
     $dataroot   = "$homedir"
@@ -11,6 +11,11 @@ define devpi::server () { ##$uid='908') {
     $proxy      = ''
     $no_proxy   = "${fqdn},lan,domain"
 
+    if $uid != '' {
+        User {
+            uid     => $uid,
+        }
+    }
     File {
         owner       => $username,
         group       => $username,
@@ -29,7 +34,6 @@ define devpi::server () { ##$uid='908') {
     user { $username:
         ensure      => 'present',
         comment     => 'PyPI Proxy Server',
-        #uid         => $uid,
         gid         => $username,
         shell       => '/bin/bash',
         home        => $homedir,
