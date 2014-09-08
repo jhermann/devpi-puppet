@@ -67,6 +67,17 @@ define devpi::server ($uid='') {
         target      => '../sites-available/devpi',
     }
 
+    file { "${dataroot}/www":
+        ensure      => directory,
+        mode        => 0755,
+        require     => [User[$username],],
+    }
+    ->
+    file { "${dataroot}/www/favicon.ico":
+        ensure      => present,
+        source      => 'puppet:///modules/devpi/favicon.ico',
+    }
+
     exec { 'nginx reload devpi':
         command     => 'service nginx reload',
         subscribe   => File['/etc/nginx/sites-available/devpi'],
