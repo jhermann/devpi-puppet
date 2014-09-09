@@ -1,15 +1,16 @@
 # Setup of PyPI proxy server
 # TODO: add real parameters
 # TODO: split off nginx setup into its own class
-# TODO: optional uid parameter?!
 define devpi::server ( $uid='') {
-    $username   = 'devpi'
-    $homedir    = "/var/lib/${username}"
-    $dataroot   = "$homedir"
-    $port       = '3141'
-    $www_port   = '31415'
-    $proxy      = ''
-    $no_proxy   = "${fqdn},lan,domain"
+    $username       = 'devpi'
+    $homedir        = "/var/lib/${username}"
+    $dataroot       = "$homedir"
+    $port           = '3141'
+    $www_port       = '31415'
+    $www_scheme     = 'http'
+    $proxy          = ''
+    $no_proxy       = "${fqdn},lan,domain"
+    $master_fqdn    = ''
 
     if $uid != '' {
         User {
