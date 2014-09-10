@@ -38,9 +38,15 @@ This module is known to work on:
 * Ubuntu 14.04 (trusty)
 
 
+## Related projects
+
+* [devpi](https://bitbucket.org/hpk42/devpi) – The main project on Bitbucket.
+* [devpi Debian packaging](https://github.com/jhermann/devpi-enterprisey/tree/master/debianized-devpi) – Build a DEB package for `devpi` that contains all dependencies and extensions in a virtualenv.
+* [puppet-module-skeleton](https://github.com/garethr/puppet-module-skeleton) – A great stencil for Puppet modules.
+* [daniellawrence/puppet-devpi](https://github.com/daniellawrence/puppet-devpi) – An alternative `devpi` Puppet module.
+
+
 ## References
 
 * [devpi Docs](http://doc.devpi.net/latest/)
-* [devpi Debian packaging](https://github.com/jhermann/devpi-enterprisey/tree/master/debianized-devpi)
-* [Puppet](https://puppetlabs.com/puppet/puppet-open-source)
-* [puppet-module-skeleton](https://github.com/garethr/puppet-module-skeleton)
+* [Puppet Homepage](https://puppetlabs.com/puppet/puppet-open-source)
