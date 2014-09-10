@@ -4,6 +4,18 @@
 #
 # === Parameters
 #
+# [*username*]
+# Name of the system account used to run 'devpi-server'.
+# Defaults to 'devpi'
+#
+# [*uid*]
+# If set, fixed user ID to use for the `username` account.
+# Defaults to undef
+#
+# [*userhome*]
+# Home directory of the `username` account.
+# Defaults to "/var/lib/${username}"
+#
 # [*ensure*]
 # Passed to the devpi package.
 # Defaults to present
@@ -25,6 +37,9 @@
 #
 
 class devpi (
+    $username                   = $devpi::params::username,
+    $uid                        = $devpi::params::uid,
+    $userhome                   = $devpi::params::userhome,
     $ensure                     = $devpi::params::ensure,
     $ensure_nginx               = $devpi::params::ensure_nginx,
     $ensure_supervisor          = $devpi::params::ensure_supervisor,
