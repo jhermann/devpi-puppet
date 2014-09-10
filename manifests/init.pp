@@ -76,6 +76,6 @@ class devpi (
 
     class { 'devpi::install': }
     -> class { 'devpi::config': }
-    #~> class { 'devpi::service': }
+    ~> class { 'devpi::service': }
     -> Class['devpi']
 }
