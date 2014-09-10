@@ -5,7 +5,8 @@
 class devpi::params {
     $username                   = 'devpi'
     $uid                        = undef
-    $userhome                   = "/var/lib/${username}"
+    $userhome                   = undef
+    $dataroot                   = undef
     $ensure                     = present
     $ensure_nginx               = undef
     $ensure_supervisor          = undef

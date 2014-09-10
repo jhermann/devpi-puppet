@@ -14,7 +14,11 @@
 #
 # [*userhome*]
 # Home directory of the `username` account.
-# Defaults to "/var/lib/${username}"
+# Defaults to undef, which means "/var/lib/${username}"
+#
+# [*dataroot*]
+# Root directory of data store and backup.
+# Defaults to undef, which means "${userhome}"
 #
 # [*ensure*]
 # Passed to the devpi package.
@@ -40,6 +44,7 @@ class devpi (
     $username                   = $devpi::params::username,
     $uid                        = $devpi::params::uid,
     $userhome                   = $devpi::params::userhome,
+    $dataroot                   = $devpi::params::dataroot,
     $ensure                     = $devpi::params::ensure,
     $ensure_nginx               = $devpi::params::ensure_nginx,
     $ensure_supervisor          = $devpi::params::ensure_supervisor,
@@ -51,8 +56,8 @@ class devpi (
     #validate_re($::osfamily, '^(Debian|RedHat)$', 'This module only works on Debian and Red Hat based systems.')
     #validate_bool($…)
 
-    class { 'devpi::install': } ->
-    class { 'devpi::config': } ~>
-    #class { 'devpi::service': } ->
-    Class['devpi']
+    class { 'devpi::install': }
+    -> class { 'devpi::config': }
+    #~> class { 'devpi::service': }
+    -> Class['devpi']
 }
