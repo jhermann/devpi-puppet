@@ -24,10 +24,6 @@
 # Passed to the devpi package.
 # Defaults to present
 #
-# [*ensure_nginx*]
-# Passed to the nginx package, unless undef, then the package is not managed by this module.
-# Defaults to undef
-#
 # [*ensure_supervisor*]
 # Passed to the supervisor package, unless undef, then the package is not managed by this module.
 # Defaults to undef
@@ -44,10 +40,6 @@
 # [*www_scheme*]
 # Protocol scheme for external HTTP[S] service endpoint.
 # Defaults to 'http'
-#
-# [*www_default_disable*]
-# Disable 'default' NginX site?
-# Defaults to false
 #
 # [*master_fqdn*]
 # If set, this is the FQDN of the master (everything else is a replica).
@@ -66,12 +58,10 @@ class devpi (
     $userhome                   = $devpi::params::userhome,
     $dataroot                   = $devpi::params::dataroot,
     $ensure                     = $devpi::params::ensure,
-    $ensure_nginx               = $devpi::params::ensure_nginx,
     $ensure_supervisor          = $devpi::params::ensure_supervisor,
     $port                       = $devpi::params::port,
     $www_port                   = $devpi::params::www_port,
     $www_scheme                 = $devpi::params::www_scheme,
-    $www_default_disable        = $devpi::params::www_default_disable,
     $master_fqdn                = $devpi::params::master_fqdn,
     $proxy                      = $devpi::params::proxy,
     $no_proxy                   = $devpi::params::no_proxy,

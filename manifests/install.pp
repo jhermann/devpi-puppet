@@ -9,9 +9,6 @@
 #
 class devpi::install {
     package { 'devpi': ensure => $devpi::ensure }
-    if $devpi::ensure_nginx {
-        package { 'nginx': ensure => $devpi::ensure_nginx, name => 'nginx-full' }
-    }
     if $devpi::ensure_supervisor {
         package { 'supervisor': ensure => $devpi::ensure_supervisor }
     }

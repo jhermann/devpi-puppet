@@ -65,14 +65,4 @@ class devpi::config {
         group       => 'root',
         require     => [Package['supervisor'],],
     }
-
-    # NginX (optional)
-    if $www_port {
-        class { 'devpi::nginx':
-            username    => $username,
-            dataroot    => $dataroot,
-            port        => $port,
-            www_port    => $www_port,
-        }
-    }
 }

@@ -7,6 +7,7 @@ node default {
     class { 'devpi':
         ensure              => 'latest',
         ensure_supervisor   => 'latest',
-        ensure_nginx        => 'latest',
     }
+    # to activate NginX, uncomment this
+    #class { 'devpi::nginx': ensure => 'latest', www_default_disable => true }
 }
