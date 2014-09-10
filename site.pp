@@ -8,6 +8,7 @@ node default {
         ensure              => 'latest',
         ensure_supervisor   => 'latest',
     }
-    # to activate NginX, uncomment this
-    #class { 'devpi::nginx': ensure => 'latest', www_default_disable => true }
+
+    # to disable the NginX proxy, comment this out
+    class { 'devpi::nginx': ensure => 'latest', www_default_disable => true }
 }
