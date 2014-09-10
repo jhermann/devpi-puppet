@@ -9,7 +9,11 @@
 # Defaults to present
 #
 # [*ensure_nginx*]
-# Passed to the nginx package, unless undef, then the nginx package is not managed by this module.
+# Passed to the nginx package, unless undef, then the package is not managed by this module.
+# Defaults to undef
+#
+# [*ensure_supervisor*]
+# Passed to the supervisor package, unless undef, then the package is not managed by this module.
 # Defaults to undef
 #
 # [*proxy*]
@@ -21,10 +25,11 @@
 #
 
 class devpi (
-    $ensure             = $devpi::params::ensure,
-    $ensure_nginx       = $devpi::params::ensure_nginx,
-    $proxy              = $devpi::params::proxy,
-    $no_proxy           = $devpi::params::no_proxy,
+    $ensure                     = $devpi::params::ensure,
+    $ensure_nginx               = $devpi::params::ensure_nginx,
+    $ensure_supervisor          = $devpi::params::ensure_supervisor,
+    $proxy                      = $devpi::params::proxy,
+    $no_proxy                   = $devpi::params::no_proxy,
     #$ = $devpi::params::,
 ) inherits devpi::params {
     #validate_string($…)
@@ -32,7 +37,7 @@ class devpi (
     #validate_bool($…)
 
     class { 'devpi::install': } ->
-    #class { 'devpi::config': } ~>
+    class { 'devpi::config': } ~>
     #class { 'devpi::service': } ->
     Class['devpi']
 }
