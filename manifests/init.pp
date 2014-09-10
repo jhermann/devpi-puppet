@@ -33,8 +33,8 @@
 # Defaults to 3141
 #
 # [*www_port*]
-# Port for external HTTP[S] service endpoint; set this to undef if you don't want
-# to add NginX as a proxy for an external service endpoint.
+# Port for external HTTP[S] service endpoint; this is only used when the optional
+# devpi::nginx class is added to your node.
 # Defaults to 31415
 #
 # [*www_scheme*]
@@ -42,7 +42,8 @@
 # Defaults to 'http'
 #
 # [*master_fqdn*]
-# If set, this is the FQDN of the master (everything else is a replica).
+# If set, this is the FQDN of the master (everything else is a replica). Note that
+# for replication, you need to add the optional devpi::nginx class to your master node.
 #
 # [*proxy*]
 # If set, runs "devpi-server" with this HTTP[S] proxy activated.
