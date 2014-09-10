@@ -4,6 +4,8 @@
 #
 
 node default {
-    include devpi
-    devpi::server { 'devpi': }
+    class { 'devpi':
+        ensure          => 'latest',
+        ensure_nginx    => 'latest',
+    }
 }
