@@ -10,7 +10,7 @@ set -e
 basedir=$(cd $(dirname "$0") && pwd)
 cd "$basedir"
 
-fail() { echo "$@"; exit 1; }
+fail() { echo "ERROR:" "$@"; exit 1; }
 
 test $(id -u) -eq 0 || fail "Must be run as root!"
 which puppet >/dev/null || apt-get install puppet
