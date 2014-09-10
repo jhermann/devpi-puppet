@@ -14,6 +14,7 @@ fail() { echo "ERROR:" "$@"; exit 1; }
 
 test $(id -u) -eq 0 || fail "Must be run as root!"
 which puppet >/dev/null || apt-get install puppet
+which facter >/dev/null || apt-get install facter
 
 staging="/tmp/devpi-puppet-$$"
 trap "rm -rf $staging || :" EXIT ERR TERM
