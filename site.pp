@@ -5,7 +5,8 @@
 
 node default {
     class { 'devpi':
-        ensure          => 'latest',
-        ensure_nginx    => 'latest',
+        ensure              => 'latest',
+        ensure_supervisor   => 'latest',
+        ensure_nginx        => 'latest',
     }
 }

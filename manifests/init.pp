@@ -32,6 +32,21 @@
 # Passed to the supervisor package, unless undef, then the package is not managed by this module.
 # Defaults to undef
 #
+# [*port*]
+# Port for internal HTTP service endpoint (bound to localhost).
+# Defaults to 3141
+#
+# [*www_port*]
+# Port for external HTTP[S] service endpoint.
+# Defaults to 31415
+#
+# [*www_scheme*]
+# Protocol scheme for external HTTP[S] service endpoint.
+# Defaults to 'http'
+#
+# [*master_fqdn*]
+# If set, this is the FQDN of the master (everything else is a replica).
+#
 # [*proxy*]
 # If set, runs "devpi-server" with this HTTP[S] proxy activated.
 #
@@ -48,9 +63,12 @@ class devpi (
     $ensure                     = $devpi::params::ensure,
     $ensure_nginx               = $devpi::params::ensure_nginx,
     $ensure_supervisor          = $devpi::params::ensure_supervisor,
+    $port                       = $devpi::params::port,
+    $www_port                   = $devpi::params::www_port,
+    $www_scheme                 = $devpi::params::www_scheme,
+    $master_fqdn                = $devpi::params::master_fqdn,
     $proxy                      = $devpi::params::proxy,
     $no_proxy                   = $devpi::params::no_proxy,
-    #$ = $devpi::params::,
 ) inherits devpi::params {
     #validate_string($…)
     #validate_re($::osfamily, '^(Debian|RedHat)$', 'This module only works on Debian and Red Hat based systems.')

@@ -3,6 +3,12 @@
 class devpi::config {
     $username                   = $devpi::username
     $uid                        = $devpi::uid
+    $port                       = $devpi::port
+    $www_port                   = $devpi::www_port
+    $www_scheme                 = $devpi::www_scheme
+    $master_fqdn                = $devpi::master_fqdn
+    $proxy                      = $devpi::proxy
+    $no_proxy                   = $devpi::no_proxy
 
     # Dynamic/dependent defaults
     $userhome = $devpi::userhome ? {
@@ -49,5 +55,14 @@ class devpi::config {
     file { "${dataroot}/data":
         ensure      => directory,
         mode        => 0755,
+    }
+
+    # Supervisor configuration
+    file { '/etc/supervisor/conf.d/devpi-server.conf':
+        ensure      => present,
+        content     => template('devpi/supervisord.conf'),
+        owner       => 'root',
+        group       => 'root',
+        require     => [Package['supervisor'],],
     }
 }
