@@ -29,6 +29,15 @@ All the possible parameters are documented in
 for a HTML rendering see **TODO**.
 
 
+## Tested platforms
+
+This module is known to work on:
+
+* Debian 7.6 (wheezy)
+* Ubuntu 12.04 (precise)
+* Ubuntu 14.04 (trusty)
+
+
 ## References
 
 * [devpi Docs](http://doc.devpi.net/latest/)
