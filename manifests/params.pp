@@ -13,6 +13,7 @@ class devpi::params {
     $port                       = 3141
     $www_port                   = 31415
     $www_scheme                 = 'http'
+    $www_default_disable        = false
     $master_fqdn                = undef
     $proxy                      = undef
     $no_proxy                   = "${fqdn},lan,domain"
