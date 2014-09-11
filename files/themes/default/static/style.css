@@ -1,3 +1,45 @@
 //  devpi 'default' theme CSS
 //
 //  THIS FILE IS MANAGED BY PUPPET!
+
+body {
+}
+
+div.logo {
+        background-color: #feb;
+        width: 99%;
+        padding: .7rem;
+        margin-bottom: 1rem;
+        box-shadow: 2px 1px 3px #cc3;
+    } div.logo a {
+        float: left;
+        margin-left: 1rem;
+    }
+
+form#search input[type="submit"] {
+    color: #fff;
+    background-color: #e90;
+}
+
+div.query_doc {
+    margin-top: 1rem;
+}
+
+#navigation {
+        margin-top: .5rem;
+    } #navigation span {
+        font-weight: 600;
+    } #navigation span a {
+        text-decoration: none;
+    }
+
+ul.footer-versions {
+        background-color: #eee;
+        padding-left: .5rem;
+    } .footer-versions li {
+        display: inline;
+    } .footer-versions li ~ li:before {
+        content: " • ";
+    }
+
+// End of 'default' CSS //
