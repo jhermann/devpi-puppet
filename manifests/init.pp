@@ -41,9 +41,10 @@
 # Protocol scheme for external HTTP[S] service endpoint.
 # Defaults to 'http'
 #
-# [*theming*]
-# Activate devpi theming support?
-# Defaults to true
+# [*theme*]
+# Set to a Puppet module folder tree with a devpi theme, e.g. 'devpi/themes/default'.
+# See http://doc.devpi.net/latest/web.html#themes for more.
+# Defaults to undef
 #
 # [*master_fqdn*]
 # If set, this is the FQDN of the master (everything else is a replica). Note that
