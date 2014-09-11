@@ -1,3 +1,40 @@
 //  devpi 'mam' theme CSS
 //
 //  THIS FILE IS MANAGED BY PUPPET!
+@import url('http://development.mamdev.server.lan/css/style.css');
+
+body {
+}
+
+div.logo {
+    background-color: #39f;
+    width: 99%;
+    padding: .7rem;
+    margin-bottom: 1rem;
+    box-shadow: 2px 1px 3px #33c;
+}
+
+form#search input[type="submit"] {
+    color: #fff;
+    background-color: #06c;
+}
+
+div.query_doc {
+    margin-top: 1rem;
+}
+
+#navigation {
+    margin-top: .5rem;
+    } #navigation span {
+        font-weight: 600;
+    } #navigation span a {
+        text-decoration: none;
+    }
+
+.footer-versions li {
+    display: inline;
+    } .footer-versions li ~ li:before {
+        content: " • ";
+    }
+
+// End of 'mam' CSS //
