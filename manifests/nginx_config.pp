@@ -6,6 +6,12 @@ class devpi::nginx_config {
     $username       = $devpi::config::username
     $dataroot       = $devpi::config::dataroot
 
+    File {
+        owner       => $username,
+        group       => $username,
+        mode        => 0644,
+    }
+
     if $devpi::nginx::ensure {
         package { 'nginx': ensure => $devpi::nginx::ensure, name => 'nginx-full' }
     }
