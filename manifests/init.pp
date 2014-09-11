@@ -53,6 +53,10 @@
 # [*proxy*]
 # If set, runs "devpi-server" with this HTTP[S] proxy activated.
 #
+# [*ssl_proxy*]
+# If set, runs "devpi-server" with this HTTPS proxy activated.
+# Defaults to undef, which means to replicate the `proxy` parameter
+#
 # [*no_proxy*]
 # Domains to exclude from going through an active HTTP[S] proxy.
 # Defaults to the installation node, and local domains "lan" and "domain"
@@ -71,6 +75,7 @@ class devpi (
     $theme                      = $devpi::params::theme,
     $master_fqdn                = $devpi::params::master_fqdn,
     $proxy                      = $devpi::params::proxy,
+    $ssl_proxy                  = $devpi::params::ssl_proxy,
     $no_proxy                   = $devpi::params::no_proxy,
 ) inherits devpi::params {
     #validate_string($…)

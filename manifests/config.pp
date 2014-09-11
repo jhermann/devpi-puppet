@@ -13,12 +13,16 @@ class devpi::config {
 
     # Dynamic/dependent defaults
     $userhome = $devpi::userhome ? {
-      undef     => "/var/lib/${username}",
-      default   => $devpi::userhome,
+        undef     => "/var/lib/${username}",
+        default   => $devpi::userhome,
     }
     $dataroot = $devpi::dataroot ? {
-      undef     => "${userhome}",
-      default   => $devpi::dataroot,
+        undef     => $userhome,
+        default   => $devpi::dataroot,
+    }
+    $ssl_proxy = $devpi::ssl_proxy ? {
+        undef     => $proxy,
+        default   => $devpi::ssl_proxy,
     }
 
     # Resource defaults
