@@ -41,6 +41,10 @@
 # Protocol scheme for external HTTP[S] service endpoint.
 # Defaults to 'http'
 #
+# [*theming*]
+# Activate devpi theming support?
+# Defaults to true
+#
 # [*master_fqdn*]
 # If set, this is the FQDN of the master (everything else is a replica). Note that
 # for replication, you need to add the optional devpi::nginx class to your master node.
@@ -63,6 +67,7 @@ class devpi (
     $port                       = $devpi::params::port,
     $www_port                   = $devpi::params::www_port,
     $www_scheme                 = $devpi::params::www_scheme,
+    $theming                    = $devpi::params::theming,
     $master_fqdn                = $devpi::params::master_fqdn,
     $proxy                      = $devpi::params::proxy,
     $no_proxy                   = $devpi::params::no_proxy,

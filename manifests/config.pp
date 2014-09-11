@@ -6,6 +6,7 @@ class devpi::config {
     $port                       = $devpi::port
     $www_port                   = $devpi::www_port
     $www_scheme                 = $devpi::www_scheme
+    $theming                    = $devpi::params::theming
     $master_fqdn                = $devpi::master_fqdn
     $proxy                      = $devpi::proxy
     $no_proxy                   = $devpi::no_proxy
