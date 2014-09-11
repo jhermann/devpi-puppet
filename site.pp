@@ -7,6 +7,7 @@ node default {
     class { 'devpi':
         ensure              => 'latest',
         ensure_supervisor   => 'latest',
+        theme               => 'devpi/themes/default',
     }
 
     # to disable the NginX proxy, comment this out

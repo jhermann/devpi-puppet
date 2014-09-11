@@ -67,7 +67,7 @@ class devpi (
     $port                       = $devpi::params::port,
     $www_port                   = $devpi::params::www_port,
     $www_scheme                 = $devpi::params::www_scheme,
-    $theming                    = $devpi::params::theming,
+    $theme                      = $devpi::params::theme,
     $master_fqdn                = $devpi::params::master_fqdn,
     $proxy                      = $devpi::params::proxy,
     $no_proxy                   = $devpi::params::no_proxy,

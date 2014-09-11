@@ -6,7 +6,7 @@ class devpi::config {
     $port                       = $devpi::port
     $www_port                   = $devpi::www_port
     $www_scheme                 = $devpi::www_scheme
-    $theming                    = $devpi::params::theming
+    $theme                      = $devpi::theme
     $master_fqdn                = $devpi::master_fqdn
     $proxy                      = $devpi::proxy
     $no_proxy                   = $devpi::no_proxy
@@ -68,21 +68,24 @@ class devpi::config {
     }
 
     # Theming / WWW
-    file { "${dataroot}/www":
-        ensure      => directory,
-        mode        => 0755,
-        require     => [User[$username],],
-    } ->
-    file { "${dataroot}/www/templates":
-        ensure      => directory,
-        mode        => 0755,
-    } ->
-    file { "${dataroot}/www/static":
-        ensure      => directory,
-        owner       => 'www-data',
-        mode        => 0755,
-    } ->
-    file { "${dataroot}/www/static/favicon.ico":
+    if $theme {
+        file { "${dataroot}/www":
+            ensure      => directory,
+            source      => "puppet:///modules/${theme}",
+            mode        => 0755,
+            recurse     => true,
+            require     => [User[$username],],
+        }
+    } else {
+        file { "${dataroot}/www":
+            ensure      => directory,
+            mode        => 0755,
+            require     => [User[$username],],
+        }
+    }
+
+    # Default favicon
+    file { "${dataroot}/www/favicon.ico":
         ensure      => present,
         owner       => 'www-data',
         source      => 'puppet:///modules/devpi/favicon.ico',
