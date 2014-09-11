@@ -5,12 +5,13 @@
 
 <metal:head define-macro="headcss" use-macro="request.macros['original-headcss']">
     <metal:mycss fill-slot="headcss">
-        <link rel="shortcut icon" href="${request.theme_static_url('favicon.ico')">
+        <link rel="shortcut icon" href="${request.theme_static_url('favicon.ico')}" />
         <link rel="stylesheet" type="text/css" href="${request.theme_static_url('style.css')}" />
     </metal:mycss>
 </metal:head>
 
 <metal:logo define-macro="logo">
-    <h1><a href="${request.route_url('root')}"><img src="${request.theme_static_url('logo.png')}" />
-    </a></h1>
+    <div class="logo">
+        <a href="${request.route_url('root')}"><img src="${request.theme_static_url('logo.png')}" /></a>
+    </div>
 </metal:logo>
