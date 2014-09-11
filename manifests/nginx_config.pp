@@ -3,8 +3,12 @@
 # NginX configuration.
 #
 class devpi::nginx_config {
+    # Variables used locally and by the 'nginx-devpi.conf' template
     $username       = $devpi::config::username
     $dataroot       = $devpi::config::dataroot
+    $port           = $devpi::config::port
+    $www_port       = $devpi::config::www_port
+    $www_scheme     = $devpi::config::www_scheme
 
     File {
         owner       => 'www-data',
