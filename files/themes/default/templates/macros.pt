@@ -14,6 +14,6 @@
     <div class="logo">
         <a href="${request.route_url('root')}"><img src="${request.theme_static_url('logo.png')}" /></a>
         <h1>devpi</h1>
-        <h2>PyPI server and packaging/testing/release tool</h2>
+        <h2>PyPI server &amp; packaging/testing/release tool</h2>
     </div>
 </metal:logo>
