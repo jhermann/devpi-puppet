@@ -35,22 +35,4 @@ class devpi::nginx_config {
         ensure      => link,
         target      => '../sites-available/devpi',
     }
-
-    file { "${dataroot}/www":
-        ensure      => directory,
-        mode        => 0755,
-        require     => [User[$username],],
-    } ->
-    file { "${dataroot}/www/static":
-        ensure      => directory,
-        mode        => 0755,
-    } ->
-    file { "${dataroot}/www/templates":
-        ensure      => directory,
-        mode        => 0755,
-    } ->
-    file { "${dataroot}/www/static/favicon.ico":
-        ensure      => present,
-        source      => 'puppet:///modules/devpi/favicon.ico',
-    }
 }

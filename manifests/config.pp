@@ -65,4 +65,25 @@ class devpi::config {
         group       => 'root',
         require     => [Package['supervisor'],],
     }
+
+    # Theming / WWW
+    file { "${dataroot}/www":
+        ensure      => directory,
+        mode        => 0755,
+        require     => [User[$username],],
+    } ->
+    file { "${dataroot}/www/templates":
+        ensure      => directory,
+        mode        => 0755,
+    } ->
+    file { "${dataroot}/www/static":
+        ensure      => directory,
+        owner       => 'www-data',
+        mode        => 0755,
+    } ->
+    file { "${dataroot}/www/static/favicon.ico":
+        ensure      => present,
+        owner       => 'www-data',
+        source      => 'puppet:///modules/devpi/favicon.ico',
+    }
 }
