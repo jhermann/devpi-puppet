@@ -5,6 +5,10 @@ See also [debianized-devpi](https://github.com/jhermann/devpi-enterprisey/tree/m
 for building the required `devpi` package.
 On non-Debian platforms, you can use [fpm](https://github.com/jordansissel/fpm) or similar tools to build such a package.
 
+| Screenshot of the 'default' theme |
+|:-------------:|
+| ![Screenshot of the 'default' theme](https://raw.githubusercontent.com/jhermann/devpi-puppet/master/doc/static/theme-default.png) |
+
 
 ## TL;DR
 
