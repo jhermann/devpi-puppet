@@ -1,5 +1,17 @@
 # ![logo](https://raw.githubusercontent.com/jhermann/devpi-puppet/master/doc/static/logo-32.png) devpi-puppet
 
+**Table of Contents**
+
+- [Overview](#user-content-overview)
+- [TL;DR](#user-content-tldr)
+- [Using the module in detail](#user-content-using-the-module-in-detail)
+- [Tested platforms](#user-content-tested-platforms)
+- [Related projects](#user-content-related-projects)
+- [References](#user-content-references)
+
+
+## Overview
+
 This is a Puppet module to install [devpi-server](http://doc.devpi.net/latest/) behind a NginX proxy.
 See also [debianized-devpi](https://github.com/jhermann/devpi-enterprisey/tree/master/debianized-devpi)
 for building the required `devpi` package.
