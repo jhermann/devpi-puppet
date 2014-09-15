@@ -42,9 +42,34 @@ It installs Puppet if that's missing, and then applies the node definition conta
 
 ## Using the module in detail
 
+### Parameters
+
 All the possible parameters are documented in
 [init.pp](https://github.com/jhermann/devpi-puppet/tree/master/manifests/init.pp),
 for a HTML rendering see **TODO**.
+
+### Importing the module into your project
+
+If for whatever reason you don't want to use tools like
+the [puppet module](https://docs.puppetlabs.com/puppet/latest/reference/modules_installing.html) command
+or [librarian-puppet](http://librarian-puppet.com/),
+the following shows how to use `git subtree` (as opposed to `git submodule`)
+to import this repository into your `modules` directory.
+
+First, and once only, add `devpi-puppet` to your remotes and add a subtree named `modules/devpi`:
+
+```sh
+git remote add -f devpi-puppet "https://github.com/jhermann/devpi-puppet.git"
+git remote update && git subtree add --prefix modules/devpi devpi-puppet master --squash
+```
+
+Then to later update the subtree, use this:
+
+```sh
+git remote update && git subtree pull --prefix modules/devpi devpi-puppet master --squash
+```
+
+You can also use a tag name instead of `master`, to get a specific release.
 
 
 ## Tested platforms
