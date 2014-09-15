@@ -1,8 +1,6 @@
 # ![logo](https://raw.githubusercontent.com/jhermann/devpi-puppet/master/doc/static/logo-32.png) devpi-puppet
 
 ![Apache 2.0 licensed](http://img.shields.io/badge/license-Apache_2.0-red.svg)
- ![Tag](http://img.shields.io/github/tag/jhermann/devpi-puppet.svg)
- ![Issues#](http://img.shields.io/github/issues/jhermann/devpi-puppet.svg)
 
 **Table of Contents**
 
