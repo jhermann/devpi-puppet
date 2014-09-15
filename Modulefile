@@ -1,5 +1,5 @@
 name        'devpi-puppet'
-version     '0.3.1'
+version     '0.3.2'
 source      'git://github.com/jhermann/devpi-puppet.git'
 author      'Jürgen Hermann'
 summary     'Module to install the devpi local PyPI proxy and repository'
