@@ -36,6 +36,7 @@ div.query_doc {
 ul.footer-versions {
         background-color: #eee;
         padding-left: .5rem;
+        line-height: 85%;
     } .footer-versions li {
         display: inline;
     } .footer-versions li ~ li:before {
