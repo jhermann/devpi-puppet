@@ -45,7 +45,8 @@ It installs Puppet if that's missing, and then applies the node definition conta
 ### Parameters
 
 All the possible parameters are documented in
-[init.pp](https://github.com/jhermann/devpi-puppet/tree/master/manifests/init.pp).
+[init.pp](https://github.com/jhermann/devpi-puppet/tree/master/manifests/init.pp) and
+[nginx.pp](https://github.com/jhermann/devpi-puppet/tree/master/manifests/nginx.pp).
 For creating a simple HTML rendering, use this command:
 
 ```sh
