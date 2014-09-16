@@ -45,8 +45,13 @@ It installs Puppet if that's missing, and then applies the node definition conta
 ### Parameters
 
 All the possible parameters are documented in
-[init.pp](https://github.com/jhermann/devpi-puppet/tree/master/manifests/init.pp),
-for a HTML rendering see **TODO**.
+[init.pp](https://github.com/jhermann/devpi-puppet/tree/master/manifests/init.pp).
+For creating a simple HTML rendering, use this command:
+
+```sh
+rdoc -q -SN1 -E pp=rb >doc/index.html manifests/init.pp manifests/nginx.pp
+```
+
 
 ### Importing the module into your project
 
