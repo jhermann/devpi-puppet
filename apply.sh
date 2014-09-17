@@ -20,4 +20,5 @@ staging="/tmp/devpi-puppet-$$"
 trap "rm -rf $staging || :" EXIT ERR TERM
 mkdir "$staging"
 ln -nfs "$basedir" "$staging/devpi"
-puppet apply --modulepath "$staging" "$@" site.pp
+puppet apply --modulepath "$staging" "$@" site.pp 2>&1 \
+    | egrep -v '(Setting templatedir is deprecated|issue_deprecation_warning)'
