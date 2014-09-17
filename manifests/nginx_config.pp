@@ -9,6 +9,7 @@ class devpi::nginx_config {
     $port           = $devpi::config::port
     $www_port       = $devpi::config::www_port
     $www_scheme     = $devpi::config::www_scheme
+    $listen         = $devpi::nginx::listen
 
     File {
         owner       => 'www-data',
