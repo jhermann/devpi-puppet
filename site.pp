@@ -20,7 +20,7 @@ class themed_devpi_with_nginx ($theme='default', $listen=undef) {
 
 
 node /lxujhe.*/ {
-    $eth0_name = inline_template("<% _erbout.concat(Resolv::DNS.open.getname('$ipaddress_eth0').to_s) %>")
+    $eth0_name = inline_template("<%= Resolv::DNS.open.getname('$::ipaddress_eth0') %>")
 
     class { 'themed_devpi_with_nginx':
         listen              => ["${eth0_name}:31415", "${eth0_name}:31443 ssl"],
