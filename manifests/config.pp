@@ -20,6 +20,10 @@ class devpi::config {
         undef     => $userhome,
         default   => $devpi::dataroot,
     }
+    $master_addr = $devpi::master_addr ? {
+        undef     => $master_fqdn,
+        default   => $devpi::master_addr,
+    }
     $ssl_proxy = $devpi::ssl_proxy ? {
         undef     => $proxy,
         default   => $devpi::ssl_proxy,

@@ -16,6 +16,7 @@ class devpi::params {
     $www_default_disable        = false
     $theme                      = undef
     $master_fqdn                = undef
+    $master_addr                = undef
     $proxy                      = undef
     $ssl_proxy                  = undef
     $no_proxy                   = "${fqdn},lan,domain"

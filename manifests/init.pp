@@ -47,8 +47,13 @@
 # Defaults to undef
 #
 # [*master_fqdn*]
-# If set, this is the FQDN of the master (everything else is a replica). Note that
+# If set, this is the FQDN of the master host (everything else is a replica). Note that
 # for replication, you need to add the optional devpi::nginx class to your master node.
+#
+# [*master_addr*]
+# If set, this is the HTTP[S] host name or IP to use for replication; otherwise,
+# the `master_fqdn` value is used.
+# Defaults to undef, which means the same as `master_fqdn`
 #
 # [*proxy*]
 # If set, runs "devpi-server" with this HTTP[S] proxy activated.
@@ -74,6 +79,7 @@ class devpi (
     $www_scheme                 = $devpi::params::www_scheme,
     $theme                      = $devpi::params::theme,
     $master_fqdn                = $devpi::params::master_fqdn,
+    $master_addr                = $devpi::params::master_addr,
     $proxy                      = $devpi::params::proxy,
     $ssl_proxy                  = $devpi::params::ssl_proxy,
     $no_proxy                   = $devpi::params::no_proxy,
