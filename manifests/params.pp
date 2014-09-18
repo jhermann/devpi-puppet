@@ -20,4 +20,5 @@ class devpi::params {
     $proxy                      = undef
     $ssl_proxy                  = undef
     $no_proxy                   = "${fqdn},lan,domain"
+    $listen                     = undef
 }
