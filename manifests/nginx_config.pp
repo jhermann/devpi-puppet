@@ -8,8 +8,10 @@ class devpi::nginx_config {
     $dataroot       = $devpi::config::dataroot
     $port           = $devpi::config::port
     $www_port       = $devpi::config::www_port
+    $ssl_port       = $devpi::config::ssl_port
     $www_scheme     = $devpi::config::www_scheme
     $listen         = $devpi::nginx::listen
+    $ssl_cert       = $devpi::nginx::ssl_cert
 
     File {
         owner       => 'www-data',
@@ -26,6 +28,19 @@ class devpi::nginx_config {
             ensure      => absent,
             require     => [Package['nginx'],],
         }
+    }
+
+    if $ssl_cert {
+        file { '/etc/nginx/ssl':
+            ensure      => directory,
+            owner       => 'root',
+            group       => 'root',
+            mode        => 0750,
+            require     => [Package['nginx'],],
+        }
+        # Must be provided manually or by the node using this module:
+        -> File["/etc/nginx/ssl/${ssl_cert}.crt"]
+        -> File["/etc/nginx/ssl/${ssl_cert}.key"]
     }
 
     file { '/etc/nginx/sites-available/devpi':

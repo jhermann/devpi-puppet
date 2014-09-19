@@ -12,10 +12,12 @@ class devpi::params {
     $ensure_supervisor          = undef
     $port                       = 3141
     $www_port                   = 31415
-    $www_scheme                 = 'http'
+    $ssl_port                   = 31443
+    $ssl_cert                   = undef
     $www_default_disable        = false
     $theme                      = undef
     $master_fqdn                = undef
+    $master_scheme              = 'https'
     $master_addr                = undef
     $proxy                      = undef
     $ssl_proxy                  = undef
