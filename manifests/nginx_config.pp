@@ -4,14 +4,15 @@
 #
 class devpi::nginx_config {
     # Variables used locally and by the 'nginx-devpi.conf' template
-    $username       = $devpi::config::username
-    $dataroot       = $devpi::config::dataroot
-    $port           = $devpi::config::port
-    $www_port       = $devpi::config::www_port
-    $ssl_port       = $devpi::config::ssl_port
-    $www_scheme     = $devpi::config::www_scheme
-    $listen         = $devpi::nginx::listen
-    $ssl_cert       = $devpi::nginx::ssl_cert
+    $username           = $devpi::config::username
+    $dataroot           = $devpi::config::dataroot
+    $port               = $devpi::config::port
+    $www_port           = $devpi::config::www_port
+    $ssl_port           = $devpi::config::ssl_port
+    $www_scheme         = $devpi::config::www_scheme
+    $listen             = $devpi::nginx::listen
+    $ssl_cert           = $devpi::nginx::ssl_cert
+    $immutable_accounts = $devpi::nginx::immutable_accounts
 
     File {
         owner       => 'www-data',

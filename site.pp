@@ -3,7 +3,7 @@
 # via "sudo apply.sh".
 #
 
-class themed_devpi_with_nginx ($theme='default', $listen=undef, $ssl_cert=undef) {
+class themed_devpi_with_nginx ($theme='default', $listen=undef, $ssl_cert=undef, $immutable_accounts=false) {
     class { 'devpi':
         ensure              => 'latest',
         ensure_supervisor   => 'latest',
@@ -16,6 +16,7 @@ class themed_devpi_with_nginx ($theme='default', $listen=undef, $ssl_cert=undef)
         www_default_disable => true,
         listen              => $listen,
         ssl_cert            => $ssl_cert,
+        immutable_accounts  => $immutable_accounts,
     }
 }
 
@@ -31,6 +32,7 @@ node /lxujhe.*/ {
         ssl_cert            => $::fqdn,
         listen              => ["${eth0_name}:31415", "${eth0_name}:31443 ssl"],
         theme               => 'mam',
+        immutable_accounts  => true,
     }
 }
 

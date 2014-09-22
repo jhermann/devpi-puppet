@@ -23,4 +23,5 @@ class devpi::params {
     $ssl_proxy                  = undef
     $no_proxy                   = "${fqdn},lan,domain"
     $listen                     = undef
+    $immutable_accounts         = false
 }
