@@ -94,6 +94,7 @@ This module is known to work on:
 * [puppet-module-skeleton](https://github.com/garethr/puppet-module-skeleton) – A great stencil for Puppet modules.
 * [daniellawrence/puppet-devpi](https://github.com/daniellawrence/puppet-devpi) – An alternative `devpi` Puppet module.
 * [dave-shawley/devpi-cookbook](https://github.com/dave-shawley/devpi-cookbook) – Chef cookbook for `devpi-server`.
+* [ansible-devpi](https://github.com/dhellmann/ansible-devpi) – Ansible role for setting up a `devpi` server  by Doug Hellmann.
 * [scrapinghub/docker-devpi](https://github.com/scrapinghub/docker-devpi) – Trusted build of `devpi` published to the public Docker registry.
 * [daniellawrence/devpi-docker](https://github.com/daniellawrence/devpi-docker) – Running `devpi` the easy way.
 * [fschulze/devpi-buildout](https://github.com/fschulze/devpi-buildout) – A buildout to set up `devpi-server` on localhost.
